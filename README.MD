@@ -1,22 +1,43 @@
-安装nodejs
-1.vscode安装solidity插件和SCStudio安全分析插件，按F5可以快速编译
-2.安装solc编译环境   npm install -g solc
-3.安装truffle  npm install -g truffle
-4.安装ganache本地链，官网https://trufflesuite.com/ganache/下载安装，直接启动即可
-5.安装truffle-flattener npm intall -g truffle-flattener
+## Development environment
+1.Install nodejs
+2.Vscode Install solidity plugin和SCStudio plugin，press F5 to fast compilation
+3.Install solc
+```
+npm install -g solc
+```   
+4.Install truffle  
+```
+npm install -g truffle
+```
+5.Install ganache for debug, websit:https://trufflesuite.com/ganache, then run ganache
+6.Install truffle-flattener 
+```
+npm intall -g truffle-flattener
+```
+
+## Preparation work
+1.Place the wallet private key in the.env file
+2.Modify truffle-config.js, write the private key into the variable priviteKeys, and configure the network environment
+3.Run script truffle create migration develop_triplec_medal,automatically create deploy scripts and modify them
 
 
-
-准备工作：
-1.将钱包私钥放到.env文件中
-2.修改truffle-config.js,将私钥写入变量priviteKeys中，配置网络环境等
-3.执行truffle create migration develop_triplec_medal，自动创建deploy脚本，修改脚本
-
-
-开始部署：
-1. 部署到本地网络
+## Deploying
+1. Deploy contract to the local network
+```
 truffle migrate --network dev
-2. 部署到公链
+```
+2. Deploy contract to a public chain
+```
 truffle migrate --network bsc/bsctest
-3.truffle-flattener ./contracts/medal/TriplecMedal.sol --output ./deployment/TriplecMedal.full.sol 
-然后删除fullsol中的多余的//SPDX-License-Identifier: MIT，最后将full.sol文件通过区块链浏览器上传到合约源码中
+```
+3.Create full sol file
+```
+truffle-flattener ./contracts/medal/TriplecMedal.sol --output ./deployment/TriplecMedal.full.sol 
+```
+Then delete the redundant //SPDX-License-Identifier: MIT in fullsol, and finally upload the full.sol file to the contract source code through the blockchain browser
+
+
+## License
+
+TripleC Contracts is released under the [MIT License](LICENSE).
+
