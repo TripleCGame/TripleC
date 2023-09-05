@@ -1,25 +1,24 @@
 ## Development environment
-1.Install nodejs
-2.Vscode Install solidity plugin和SCStudio plugin，press F5 to fast compilation
-3.Install solc
+1. Install nodejs
+2. Vscode Install solidity plugin和SCStudio plugin，press F5 to fast compilation
+3. Install solc
 ```
 npm install -g solc
 ```   
-4.Install truffle  
+4. Install truffle  
 ```
 npm install -g truffle
 ```
-5.Install ganache for debug, websit:https://trufflesuite.com/ganache, then run ganache
-6.Install truffle-flattener 
+5. Install ganache for debug, websit:https://trufflesuite.com/ganache, then run ganache
+6. Install truffle-flattener 
 ```
 npm intall -g truffle-flattener
 ```
 
 ## Preparation work
-1.Place the wallet private key in the.env file
-2.Modify truffle-config.js, write the private key into the variable priviteKeys, and configure the network environment
-3.Run script truffle create migration develop_triplec_medal,automatically create deploy scripts and modify them
-
+1. Place the wallet private key in the.env file
+2. Modify truffle-config.js, write the private key into the variable priviteKeys, and configure the network environment
+3. Run script truffle create migration develop_triplec_medal,automatically create deploy scripts and modify them
 
 ## Deploying
 1. Deploy contract to the local network
@@ -30,7 +29,7 @@ truffle migrate --network dev
 ```
 truffle migrate --network bsc/bsctest
 ```
-3.Create full sol file
+3. Create full sol file
 ```
 truffle-flattener ./contracts/medal/TriplecMedal.sol --output ./deployment/TriplecMedal.full.sol 
 ```
